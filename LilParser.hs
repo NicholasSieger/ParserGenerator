@@ -41,7 +41,7 @@ instance Applicative Parser where
 --allows efficient chaining of parses
 instance Monad Parser where
     return = pure
-    p >>= f = Parser $ \s-> concatMap (\(a,s1)->parse (f a) s1)           $ parse p s
+    p >>= f = Parser $ \s-> concatMap (\(a,s1)->parse (f a) s1)  $ parse p s
 
 --creates a monoid out of the parser
 --allows multiple parses of same string
